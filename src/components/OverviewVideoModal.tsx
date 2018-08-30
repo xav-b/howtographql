@@ -3,6 +3,8 @@ import { connect } from 'react-redux'
 import * as cn from 'classnames'
 import YoutubeEmbedVideo from 'youtube-embed-video'
 
+const config = require('../config')
+
 interface Props {
   visible: boolean
 }
@@ -68,7 +70,7 @@ class OverviewVideoModal extends React.Component<Props, State> {
         <div className="video-wrap">
           <div className="video">
             <YoutubeEmbedVideo
-              videoId="gdoRAPW7Abc"
+              videoId={ config.home.videoId }
               suggestions={false}
               autoplay={visible}
               controls={true}

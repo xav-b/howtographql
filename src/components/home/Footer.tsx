@@ -2,6 +2,8 @@ import * as React from 'react'
 import Icon from 'graphcool-styles/dist/components/Icon/Icon'
 import { $v } from 'graphcool-styles'
 
+const config = require('../../config')
+
 export default function Footer() {
   return (
     <div className="footer">
@@ -35,18 +37,18 @@ export default function Footer() {
       `}</style>
       <span>
         Made with <span className="love"> ♥ </span> by{' '}
-        <a href="https://www.prisma.io" target="_blank">Prisma</a> and the
-        amazing
-        GraphQL community
+        <a href={ config.footer.website } target="_blank">Xavier</a>,{' '}
+        with the help of <a href="https://www.prisma.io" target="_blank">Prisma</a> and the
+        amazing GraphQL community
       </span>
       <div className="logos">
-        <a href="https://slack.prisma.io" target="_blank">
+        <a href={ config.footer.slack } target="_blank">
           <img src={require('../../assets/icons/slack.svg')} alt="" />
         </a>
-        <a href="https://twitter.com/prisma" target="_blank">
+        <a href={`https://twitter.com/${config.footer.twitter}`} target="_blank">
           <img src={require('../../assets/icons/twitter.svg')} alt="" />
         </a>
-        <a href="https://github.com/howtographql/howtographql" target="_blank">
+        <a href={ config.github } target="_blank">
           <Icon
             src={require('graphcool-styles/icons/fill/github.svg')}
             color={$v.black}

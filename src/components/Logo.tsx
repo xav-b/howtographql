@@ -1,6 +1,8 @@
 import * as React from 'react'
 import Link from 'gatsby-link'
 
+const config = require('../config')
+
 export default function Logo() {
   return (
     <div className="logo-wrapper">
@@ -26,8 +28,8 @@ export default function Logo() {
       `}</style>
       <Link to="/">
         <div className="logo">
-          <img src={require('../assets/icons/howtographql.svg')} alt="" />
-          <span>How to GraphQL</span>
+          <img src={require('../assets/icons/project-logo.svg')} alt="" />
+          <span>{ config.project.toUpperCase() }</span>
         </div>
       </Link>
     </div>

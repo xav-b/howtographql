@@ -24,6 +24,7 @@ export default function ContentOverview({ location, steps }: Props) {
         .content-overview {
           @p: .center;
           max-width: 1280px;
+          margin-top: 3em;
         }
         p {
           @p: .tc, .mt38;
@@ -62,7 +63,7 @@ export default function ContentOverview({ location, steps }: Props) {
       <div className="content-overview">
         <h2>Content Overview</h2>
         <p>
-          Here is an overview of all the tutorials and their contents that you find on this site. {' '}
+          Here is an overview of all the tutorials and their contents that you find on this course. {' '}
         </p>
       </div>
       <div className="bordered">

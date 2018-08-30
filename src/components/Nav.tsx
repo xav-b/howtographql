@@ -5,6 +5,8 @@ import { Step } from '../types'
 import { getBackendTutorials, getFrontendTutorials } from '../utils/tutorials'
 import Stack from './Steps/Stack'
 
+const config = require('../config')
+
 interface Props {
   steps: { [key: string]: Step[] }
   location: any
@@ -101,7 +103,7 @@ export default class Nav extends React.Component<Props, {}> {
         </div>
         <a
           className="element github"
-          href="https://github.com/howtographql/howtographql"
+          href={ config.github }
           target="_blank"
         >
           <Icon

@@ -1,4 +1,4 @@
-# How to GraphQL 🎓
+# How to Quant 🎓
 
 [How to GraphQL](https://www.howtographql.com) is a fullstack tutorial website to learn all about GraphQL! It was built by [Prisma](https://www.prisma.io) and many amazing contributors. All content on the site is completely free and open-source.
 
@@ -50,3 +50,10 @@ yarn start # http://localhost:8000/
 ```
 
 > Note: If you're using Node 8, you might need to invoke `npm install -g node-gyp` before you're starting the app. More info [here](https://github.com/gatsbyjs/gatsby/issues/1754).
+
+
+#### Todo
+
+- Improve space between sections
+- Parametrize content
+- adapt newsletter

@@ -6,6 +6,8 @@ import { simpleQuery } from '../../data/LandingPlayground'
 import Link from 'gatsby-link'
 import { CSSTransitionGroup } from 'react-transition-group'
 
+const config = require('../../config').playground
+
 interface State {
   showNextStep: boolean
 }
@@ -75,13 +77,11 @@ export default class LandingPlayground extends React.Component<{}, State> {
             transition: opacity 300ms ease-in;
           }
         `}</style>
-        <h1>Never tried GraphQL before?</h1>
-        <p>Time to run your first query in the Playground…</p>
+        <h1>{ config.title }</h1>
+        <p>{ config.subtitle }</p>
         <div className="graphiql">
           <MarkdownGraphiQL
-            literal={simpleQuery(
-              'https://api.graph.cool/simple/v1/cixos23120m0n0173veiiwrjr',
-            )}
+            literal={simpleQuery(config.api)}
             playground={true}
             disableResize={true}
             disableQueryHeader={true}
@@ -96,9 +96,9 @@ export default class LandingPlayground extends React.Component<{}, State> {
           {this.state.showNextStep &&
             <div className="center-container">
               <div>
-                <h3>That was easy, wasn't it?</h3>
+                <h3>{ config.transition }</h3>
                 <Link to="/advanced/0-clients/">
-                  <div className="btn small">Learn how to use GraphQL</div>
+                  <div className="btn small">{ config.cta }</div>
                 </Link>
               </div>
             </div>}

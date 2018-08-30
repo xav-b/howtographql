@@ -1,6 +1,8 @@
 import * as React from 'react'
 import Checkmark from '../Checkmark'
 
+const config = require('../../config').build
+
 export default function WhatWeBuild() {
   return (
     <section>
@@ -64,29 +66,24 @@ export default function WhatWeBuild() {
             }
           }
         `}</style>
-        <h2>What you'll build: A Hackernews clone</h2>
+        <h2>{ config.title }</h2>
         <p className="c">
-          Start from scratch and build a fully-featured Hackernews clone with one of the 
-          detailed step-by-step tutorials. Use the programming language and framework of your choice!
+          { config.subtitle }
         </p>
         <div className="preview">
           <img
-            src={require('../../assets/graphics/hackernews-preview.png')}
+            src={require('../../assets/graphics/build-screenshot.png')}
             alt=""
           />
           <div className="points">
-            <div className="point">
-              <Checkmark />
-              <p>Learn about best practices</p>
-            </div>
-            <div className="point">
-              <Checkmark />
-              <p>Detailed instructions &amp; explanations</p>
-            </div>
-            <div className="point">
-              <Checkmark />
-              <p>From scratch to production</p>
-            </div>
+            {
+              config.bullets.map(keypoint => (
+                <div className="point">
+                  <Checkmark />
+                  <p>{ keypoint }</p>
+                </div>
+              ))
+            }
           </div>
         </div>
       </div>

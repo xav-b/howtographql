@@ -13,6 +13,7 @@ import Duration from '../Duration'
 import NewsletterSignup from '../NewsletterSignup'
 import { getTotalDuration } from '../../utils/getTotalDuration'
 import Steps from '../Steps/Steps'
+const config = require('../../config')
 
 interface Props {
   width?: number
@@ -28,7 +29,7 @@ interface State {
 }
 
 export const FRONTEND_TUTORIALS_COUNT = data.filter(tutorial => tutorial.type === 'frontend').length-1
-const CATEGORIES = ['Frontend', 'Backend']
+const CATEGORIES = ['Frontend', 'Backend', 'Pouet']
 const FRONTEND_INDEX = 0
 const BACKEND_INDEX = 1
 
@@ -280,15 +281,13 @@ export default class Chooser extends React.Component<Props, State> {
         `}</style>
         <div className="steps-content">
           <LeftColumn>
-            <h3 className="first-h3">Hands-on tutorials</h3>
+            <h3 className="first-h3">{ config.tutorials.leftCatch }</h3>
           </LeftColumn>
           <div className="steps-list steps-list-top">
             <DottedListItem first={true} path={'/tutorials/choose'}>
               <div className="list-item">
                 <Link to={'/choose/'}>
-                  <span>
-                    Choose your favorite technology
-                  </span>
+                  <span>{ config.tutorials.rightButton }</span>
                 </Link>
               </div>
             </DottedListItem>

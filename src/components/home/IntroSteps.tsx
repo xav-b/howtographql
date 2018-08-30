@@ -6,6 +6,8 @@ import Steps from '../Steps/Steps'
 import { Step } from '../../types'
 import { getTotalDuration } from '../../utils/getTotalDuration'
 
+const config = require('../../config')
+
 interface Props {
   steps: { [key: string]: Step[] }
   location: any
@@ -13,6 +15,9 @@ interface Props {
 
 export default function IntroSteps({ steps, location }: Props) {
   const basicsDuration = getTotalDuration(steps.basics)
+
+  const introTutorial = config.tutorials.content.filter(tuto => tuto.category === 'Introduction')
+
   return (
     <div className="intro-steps">
       <style jsx={true}>{`
@@ -59,20 +64,18 @@ export default function IntroSteps({ steps, location }: Props) {
       <div className="steps-content">
         <LeftColumn className="steps-description" light={true}>
           <div className="basic-graphql">
-            <h3>GraphQL Fundamentals</h3>
+            <h3>{ introTutorial[0].section }</h3>
             <div className="duration">
               <Duration duration={basicsDuration} total={true} />
             </div>
             <p>
-              In the first chapter, you’ll learn about
-              the core concepts of GraphQL. {' '}
+              { introTutorial[0].description }. {' '}
             </p>
           </div>
           <div className="advanced-graphql">
-            <h3>Advanced GraphQL (optional)</h3>
+            <h3>{ introTutorial[1].section }</h3>
             <p>
-              Read this chapter to get a broader
-              understanding of the GraphQL ecosystem.
+              { introTutorial[1].description }
             </p>
           </div>
         </LeftColumn>

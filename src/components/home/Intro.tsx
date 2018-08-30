@@ -7,6 +7,9 @@ import { setOverviewVideoVisible } from '../../actions/ui'
 import Particles from 'react-particles-js'
 import Icon from 'graphcool-styles/dist/components/Icon/Icon'
 
+// I don't know why standard export doesn't work
+const config = require('../../config')
+
 interface Props {
   steps: { [key: string]: Step[] }
   location: any
@@ -123,25 +126,20 @@ class Intro extends React.Component<Props, null> {
           }
         `}</style>
         <div className="rest">
-          <h1>The Fullstack Tutorial for GraphQL</h1>
-          <p>
-            The free and open-source tutorial to learn all around GraphQL to go from
-            zero to production.
-          </p>
+          <h1>{ config.home.title }</h1>
+          <p>{ config.home.punchline }</p>
           <div className="center-container">
             <div
               className="watch-overview"
               onClick={this.props.setOverviewVideoVisible.bind(null, true)}
             >
               <Icon src={require('../../assets/icons/play.svg')} color={'black'} width={37} height={37} />
-              <span>
-                Watch Overview
-              </span>
+              <span>{ config.home.videoLabel }</span>
             </div>
           </div>
           <div className="center-container btn-container">
             <Link to="/basics/0-introduction/">
-              <div className="btn">Start with Introduction</div>
+              <div className="btn">{ config.home.ctaLabel }</div>
             </Link>
           </div>
           <IntroSteps steps={this.props.steps} location={this.props.location}/>
